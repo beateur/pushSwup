@@ -32,5 +32,5 @@ void rotate(t_pile *a)
 	while (++i < a->size)
 		tmp[i] = tmp[i + 1];
 	tmp[a->size - 1] = buff;
-	write(1, "rr\n", 3);
+	write(1, "ra\n", 3);
 }

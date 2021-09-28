@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int ft_rangeContainDoublon(int *range, int size)
+int ft_rangecontaindoublon(int *range, int size)
 {
   int i;
   int j;

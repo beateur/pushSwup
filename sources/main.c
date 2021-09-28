@@ -56,9 +56,9 @@ int	main(int argc, char **argv)
 	if (!(case_1 = parsearg(argv, argc)))
 		return (errormsg());
 	pile_a = pile_create(case_1);
-	if (ft_rangeContainDoublon(pile_a.nbr, pile_a.size))
+	if (ft_rangecontaindoublon(pile_a.nbr, pile_a.size))
 		return (errormsg());
-	if (ft_maxInRange(pile_a.nbr, pile_a.size) > 2147483647)
+	if (ft_maxinrange(pile_a.nbr, pile_a.size) > 2147483647)
 		return (errormsg());
 	pile_b.nbr = (int*)malloc(sizeof(int) * pile_a.size - 2);
 	pile_b.size = 0;

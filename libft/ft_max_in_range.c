@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int ft_maxInRange(int *tab, int size)
+int ft_maxinrange(int *tab, int size)
 {
   int i;
   int ret;

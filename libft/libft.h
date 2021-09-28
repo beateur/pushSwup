@@ -26,7 +26,7 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-int					ft_rangeContainDoublon(int *range, int size);
+int					ft_rangecontaindoublon(int *range, int size);
 void				ft_putchar(char c);
 void				ft_putstr(char const *s);
 void				ft_putendl(char const *s);
@@ -39,7 +39,7 @@ void				ft_putnbr_fd(int n, int fd);
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_bzero(void *s, size_t n);
 int					ft_nbrlen(long long value, int base);
-int 				ft_maxInRange(int *tab, int size);
+int 				ft_maxinrange(int *tab, int size);
 void				*ft_memcpy(void *dest, const void *src, size_t n);
 void				*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void				*ft_memmove(void *dest, const void *src, size_t n);

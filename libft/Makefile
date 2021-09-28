@@ -15,7 +15,7 @@ CFLAGS=-Wall -Wextra -Werror
 NAME=libft.a
 SRCS=ft_atoi.c\
 	ft_max.c\
-	ft_maxInRange.c\
+	ft_max_in_range.c\
 	ft_nbrlen.c\
 	ft_bzero.c\
 	ft_isalnum.c\
@@ -76,7 +76,7 @@ SRCS=ft_atoi.c\
 	ft_strtrim.c\
 	ft_tolower.c\
 	ft_toupper.c\
-	ft_doublonsInRange.c
+	ft_doublons_in_range.c
 
 OBJS=$(SRCS:.c=.o)
 
