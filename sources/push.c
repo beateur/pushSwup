@@ -4,7 +4,6 @@ void	push(t_pile *a, t_pile *b, char c)
 {
 	int *tmp_a;
 	int *tmp_b;
-	int buff;
 	int count;
 
 	tmp_a = a->nbr;
@@ -32,5 +31,4 @@ void			repush(t_pile *dest, t_pile *src)
 	{
 		push(src, dest, 'c');
 	}
-
 }

@@ -5,7 +5,7 @@ void	pile_fill(t_pile *pile, char **argv)
 	int	*tmp;
 	int	i;
 
-	i ^= i;
+	i = 0;
 	tmp = pile->nbr;
 	while (argv[i])
 	{

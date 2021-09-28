@@ -15,6 +15,7 @@ CFLAGS=-Wall -Wextra -Werror
 NAME=libft.a
 SRCS=ft_atoi.c\
 	ft_max.c\
+	ft_maxInRange.c\
 	ft_nbrlen.c\
 	ft_bzero.c\
 	ft_isalnum.c\
@@ -52,6 +53,7 @@ SRCS=ft_atoi.c\
 	ft_strcmp.c\
 	ft_strcpy.c\
 	ft_strdel.c\
+	ft_intdel.c\
 	ft_strdup.c\
 	ft_strequ.c\
 	ft_striter.c\
@@ -74,12 +76,13 @@ SRCS=ft_atoi.c\
 	ft_strtrim.c\
 	ft_tolower.c\
 	ft_toupper.c\
+	ft_doublonsInRange.c
 
 OBJS=$(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME):
+$(NAME):	 $(OBJS)
 		$(CC) $(CFLAGS) -c $(SRCS)
 		ar rc $(NAME) $(OBJS)
 		ranlib $(NAME)

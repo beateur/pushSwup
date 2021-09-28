@@ -14,6 +14,7 @@ t_pile	pile_create(char **argv)
 	int	i;
 	t_pile pile;
 
+  i = 0;
 	while (argv[i])
 		i++;
 	pile = pile_malloc(i);

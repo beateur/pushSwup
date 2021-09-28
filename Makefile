@@ -10,24 +10,37 @@
 #                                                                              #
 #******************************************************************************#
 
-CC=gcc
-CFLAGS=-Wall -Wextra -Werror
-NAME=push_swap
-SRCS=
+CC				= gcc
+RM				= rm -f
+CFLAGS		= -Wall -Wextra -Werror
+LIBFT			= libft/libft.a
+NAME			= push_swap
+SRCS			= sources/fill_piles.c\
+						sources/main.c\
+						sources/piles_utils.c\
+						sources/push.c\
+						sources/rotations.c\
+						sources/sorting.c\
+						sources/swap_a.c\
+						sources/free.c\
+						sources/parse.c
 
-OBJS=$(SRCS:.c=.o)
+OBJS			= $(SRCS:.c=.o)
 
-all: $(NAME)
+all:			$(LIBFT) $(NAME)
 
-$(NAME):
-		$(CC) $(CFLAGS) -c $(SRCS)
-		ar rc $(NAME) $(OBJS)
-		ranlib $(NAME)
+$(NAME):	 $(OBJS)
+		gcc ${CFLAGS} -o ${NAME} ${OBJS} ${LIBFT}
+
+$(LIBFT):
+		@$(MAKE) -C libft
 
 clean:
-		@rm -f $(OBJS)
+		$(RM) $(OBJS)
 
 fclean: clean
-		@rm -f $(NAME)
+		$(RM) $(NAME)
 
 re: fclean all
+
+.PHONY:			all clean fclean re
