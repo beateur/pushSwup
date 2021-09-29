@@ -18,14 +18,15 @@ int ft_rangecontaindoublon(int *range, int size)
   int j;
   int current;
 
-  i = 0;
+  i = -1;
   j = 0;
   if (!size)
     return (0);
   current = range[0];
   while (++i < size)
   {
-    j = i - 1;
+    j = i;
+    current = range[i];
     while (++j < size)
       if (range[j] == current)
         return (1);

@@ -27,9 +27,9 @@ SRCS			= sources/fill_piles.c\
 
 OBJS			= $(SRCS:.c=.o)
 
-all:			$(LIBFT) $(NAME)
+all:			 $(LIBFT) $(NAME)
 
-$(NAME):	 $(OBJS)
+$(NAME):	 $(LIBFT) $(OBJS)
 		gcc ${CFLAGS} -o ${NAME} ${OBJS} ${LIBFT}
 
 $(LIBFT):

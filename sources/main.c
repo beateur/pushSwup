@@ -40,7 +40,7 @@ void	push_swap(t_pile pile_a, t_pile pile_b)
 		sort_two(&pile_a);
 }
 
-int errormsg()
+int errormsg(void)
 {
 	write(2, "Error\n", 6);
 	return (0);

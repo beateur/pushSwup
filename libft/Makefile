@@ -10,11 +10,12 @@
 #                                                                              #
 #******************************************************************************#
 
-CC=gcc
-CFLAGS=-Wall -Wextra -Werror
-NAME=libft.a
-SRCS=ft_atoi.c\
-	ft_max.c\
+CC			= gcc
+RM			= rm -f
+CFLAGS	= -Wall -Wextra -Werror
+NAME		= libft.a
+SRCS		= ft_atoi.c\
+					ft_max.c\
 	ft_max_in_range.c\
 	ft_nbrlen.c\
 	ft_bzero.c\
