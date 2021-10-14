@@ -33,6 +33,7 @@ t_pile	pile_create(char **argv)
 		i++;
 	pile = pile_malloc(i);
 	pile_fill(&pile, argv);
+	free_array(argv);
 	return (pile);
 }
 

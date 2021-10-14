@@ -57,9 +57,7 @@ void	sort_three(t_pile *pile, int c)
 {
 	int		*tmp;
 	int		res;
-	int		op;
 
-	op = 0;
 	tmp = pile->nbr;
 	res = 1;
 	while (res)

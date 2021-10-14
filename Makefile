@@ -31,18 +31,24 @@ SRCS			= sources/fill_piles.c\
 
 OBJS			= $(SRCS:.c=.o)
 
-all:		 $(NAME)
 
-$(NAME):		$(LIBFT)  $(OBJS)
+
+all:
+	make -C libft
+	make $(NAME)
+
+$(NAME):  $(OBJS)
 		gcc ${CFLAGS} -o ${NAME} ${OBJS} ${LIBFT}
 
 $(LIBFT):
 		@$(MAKE) -C libft
 
 clean:
+		make clean -C libft
 		$(RM) $(OBJS)
 
 fclean: clean
+		make fclean -C libft
 		$(RM) $(NAME)
 
 re: fclean all

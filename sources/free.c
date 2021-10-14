@@ -14,9 +14,13 @@
 
 int	free_program(int *pile_a, int *pile_b)
 {
-	if (pile_a)
+	if (!pile_a)
+		return (0);
+	else
 		ft_intdel(&pile_a);
-	if (pile_b)
+	if (!pile_b)
+		return (0);
+	else
 		ft_intdel(&pile_b);
 	return (0);
 }

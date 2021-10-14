@@ -16,10 +16,8 @@ void	swap(t_pile *a, int id)
 {
 	int		buff;
 	int		*tmp;
-	int		size;
 
 	tmp = a->nbr;
-	size = a->size;
 	if (a->size < 2)
 		return ;
 	buff = tmp[0];

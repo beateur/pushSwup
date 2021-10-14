@@ -18,7 +18,7 @@ void	push_swap(t_pile pile_a, t_pile pile_b)
 	{
 		free_program(pile_a.nbr, NULL);
 		malloc_error();
-		return ;
+		exit(1);
 	}
 	if (pile_a.size > 2)
 		sort_algo(&pile_a, &pile_b);
@@ -46,6 +46,7 @@ int	main(int argc, char **argv)
 	t_pile	pile_b;
 	char	**case_1;
 
+	pile_a.nbr = NULL;
 	if (argc < 2)
 		return (0);
 	if (check_overflow(argv))

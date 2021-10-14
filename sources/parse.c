@@ -12,6 +12,13 @@
 
 #include "../includes/push_swap.h"
 
+static char	*free_all(char **dest, char **ret)
+{
+	ft_strdel(dest);
+	free_array(ret);
+	return (NULL);
+}
+
 static char	*split_andjoin(char **argv)
 {
 	char	*tmp;
@@ -33,7 +40,7 @@ static char	*split_andjoin(char **argv)
 			ft_strdel(&tmp);
 			tmp = dest;
 			if (tmp == NULL)
-				return (NULL);
+				return (free_all(&dest, ret));
 		}
 		free_array(ret);
 	}
@@ -86,9 +93,14 @@ char	**parsearg(char **argv)
 	if (!ret)
 		return (NULL);
 	while (ret[++i])
+	{
 		if (!ft_isdigit(ret[i]) && ret[i] != ' '
 			&& !(adjacent_of_minus(ret, i) && ret[i] == '-'))
+		{
+			ft_strdel(&ret);
 			return (NULL);
+		}
+	}
 	args = ft_strsplit(ret, ' ');
 	ft_strdel(&ret);
 	return (args);

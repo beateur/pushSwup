@@ -22,5 +22,5 @@ int	errormsg(t_pile *p_a)
 {
 	free_program(p_a->nbr, NULL);
 	write(2, "Error\n", 6);
-	return (0);
+	return (1);
 }

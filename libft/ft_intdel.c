@@ -14,9 +14,10 @@
 
 void	ft_intdel(int **as)
 {
-	if (as)
-	{
-		free(*as);
-		*as = 0;
-	}
+	if (as == NULL)
+		return ;
+	else if (as && *as == NULL)
+		return ;
+	free(*as);
+	*as = 0;
 }
