@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   parse.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alamorth <alamorth@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bihattay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/06 10:02:52 by alamorth          #+#    #+#             */
-/*   Updated: 2021/10/07 12:56:51 by alamorth         ###   ########.fr       */
+/*   Created: 2021/10/09 17:47:01 by bihattay          #+#    #+#             */
+/*   Updated: 2021/10/09 18:29:42 by bihattay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static char *split_andjoin(char **argv)
+static char	*split_andjoin(char **argv)
 {
 	char	*tmp;
 	char	*dest;
@@ -53,24 +53,41 @@ static int	adjacent_of_minus(char *str, int index)
 		return (0);
 	return (str[index - 1] == ' ' && ft_isdigit(str[index + 1]));
 }
-// reste un leak
-char	**parsearg(char **argv)
+
+static int	check_whitespaces(char **argv)
 {
-	int	i;
-	char **args;
-	char *ret;
+	int		i;
+	int		j;
 
 	i = 0;
-	args = NULL;
 	while (argv[++i])
-		if (!ft_strlen(argv[i]))
-			return (NULL);
+	{
+		j = -1;
+		while (argv[i][++j])
+			if (argv[i][j] != ' ')
+				break ;
+		if (j == (int)ft_strlen(argv[i]))
+			return (0);
+	}
+	return (1);
+}
+
+char	**parsearg(char **argv)
+{
+	int		i;
+	char	**args;
+	char	*ret;
+
+	i = -1;
+	args = NULL;
+	if (!check_whitespaces(argv))
+		return (NULL);
 	ret = split_andjoin(argv);
 	if (!ret)
 		return (NULL);
 	while (ret[++i])
 		if (!ft_isdigit(ret[i]) && ret[i] != ' '
-		&& !(adjacent_of_minus(ret, i) && ret[i] == '-'))
+			&& !(adjacent_of_minus(ret, i) && ret[i] == '-'))
 			return (NULL);
 	args = ft_strsplit(ret, ' ');
 	ft_strdel(&ret);

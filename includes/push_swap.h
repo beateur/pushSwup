@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alamorth <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bihattay <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/06 10:04:27 by alamorth          #+#    #+#             */
-/*   Updated: 2021/10/06 10:04:30 by alamorth         ###   ########.fr       */
+/*   Created: 2021/10/06 10:04:27 by bihattay          #+#    #+#             */
+/*   Updated: 2021/10/09 17:56:52 by bihattay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct s_quick_sort
 	int		i;
 }				t_quick_sort;
 
-int				 malloc_error(void);
+int				malloc_error(void);
 int				errormsg(t_pile *p_a);
 t_quick_sort	st_qck_sort(t_pile *pile_a, unsigned int len, unsigned int ret);
 void			quicksort(t_pile *p, t_pile *t, unsigned int l, unsigned int r);
